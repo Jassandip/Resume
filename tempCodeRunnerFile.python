@@ -1,0 +1,15 @@
+s1 = "hello"
+s2 = "world"
+
+def twoStrings(s1, s2):
+    ans = "YES"
+    s1 = set(list(s1))
+    s2 = set(list(s2))
+    for i in s2:
+        if i in s1:
+            pass
+        else:
+            ans = "NO"
+            break
+    print(ans)
+twoStrings(s1, s2)
