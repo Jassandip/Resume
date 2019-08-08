@@ -1,15 +1,23 @@
-s1 = "hello"
-s2 = "world"
 
-def twoStrings(s1, s2):
-    ans = "YES"
-    s1 = set(list(s1))
-    s2 = set(list(s2))
-    for i in s2:
-        if i in s1:
-            pass
-        else:
-            ans = "NO"
-            break
-    print(ans)
-twoStrings(s1, s2)
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the sherlockAndAnagrams function below.
+def sherlockAndAnagrams(s):
+    anagrams = 0
+    anagram_dict = {}
+    for word_length in range(1,len(s)): # determines legth of the word
+        for word_begining in range(0,len(s)-word_length): # determines what word is being compared
+            word = list(s[word_begining:word_begining+word_length]).sort()
+            for i in range(word_begining+1,len(s)-word_length):
+                if list(s[i:word_length]).sort() == word:
+                    anagrams += 1
+    print(anagrams)
+
+
+sherlockAndAnagrams("abba")
+
